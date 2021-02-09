@@ -35,10 +35,15 @@ def linear_search(data, needle):
             break
         # else:
         #     print("Not at position " + str(i) + ".")
+    
+    return i
 
 
-linear_search(names, target)
-linear_search([5, 7, 3, 2, 1, 87, 7, 54], 87)
+x = linear_search(names, target)
+print(x)
+
+
+
 
 names = [
     "Arthur",
@@ -61,6 +66,7 @@ def binary_search(list, target):
     left = 0
     right = len(list) - 1
 
+    return "Hi from the function"
     searches = 0
     searching = True
     while searching:
@@ -76,7 +82,10 @@ def binary_search(list, target):
             left = midpoint + 1
         elif middle_name > target:
             right = midpoint - 1
+    
+    return midpoint
 
-binary_search(names_1000000, target)
-binary_search(["a", "h", "k", "m", "p", "z"], "p")
+
+index = binary_search(names_1000000, target)
+print(index)
 print("Program finished.")
