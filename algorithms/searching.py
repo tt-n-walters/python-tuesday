@@ -26,17 +26,19 @@ names_1000000.sort()
 target = input("Enter name: ")
 
 # linear search algorithm
-def linear_search(data):
+def linear_search(data, needle):
     amount_of = len(data)
     range_of_names = range(amount_of)
     for i in range_of_names:
-        if data[i] == target:
+        if data[i] == needle:
             print("Yay found at position " + str(i) + "!")
             break
         # else:
         #     print("Not at position " + str(i) + ".")
 
 
+linear_search(names, target)
+linear_search([5, 7, 3, 2, 1, 87, 7, 54], 87)
 
 names = [
     "Arthur",
@@ -53,6 +55,8 @@ names = [
 ]
 
 # binary search algorithm
+
+
 def binary_search():
     left = 0
     right = len(names_1000000) - 1
@@ -65,7 +69,8 @@ def binary_search():
         searches += 1
 
         if middle_name == target:
-            print("Found at position " + str(midpoint) + ". Took " + str(searches) + " searches.")
+            print("Found at position " + str(midpoint) +
+                  ". Took " + str(searches) + " searches.")
             searching = False
         elif middle_name < target:
             left = midpoint + 1
