@@ -1,3 +1,8 @@
+
+#   Reusability - Functions can be run on command and as many times as we like
+#   Dynamic     - Functions can be run in custom ways, ie. we can change their inputs
+
+
 names = [
     "Arthur",
     "Bill",
@@ -21,15 +26,16 @@ names_1000000.sort()
 target = input("Enter name: ")
 
 # linear search algorithm
-def linear_search():
-    amount_of = len(names_1000000)
+def linear_search(data):
+    amount_of = len(data)
     range_of_names = range(amount_of)
     for i in range_of_names:
-        if names_1000000[i] == target:
+        if data[i] == target:
             print("Yay found at position " + str(i) + "!")
             break
         # else:
         #     print("Not at position " + str(i) + ".")
+
 
 
 names = [
@@ -67,8 +73,4 @@ def binary_search():
             right = midpoint - 1
 
 
-binary_search()
-binary_search()
-binary_search()
-binary_search()
-binary_search()
+print("Program finished.")
