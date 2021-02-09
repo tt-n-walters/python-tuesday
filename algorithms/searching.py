@@ -57,15 +57,15 @@ names = [
 # binary search algorithm
 
 
-def binary_search():
+def binary_search(list, target):
     left = 0
-    right = len(names_1000000) - 1
+    right = len(list) - 1
 
     searches = 0
     searching = True
     while searching:
         midpoint = int((right - left) / 2) + left
-        middle_name = names_1000000[midpoint]
+        middle_name = list[midpoint]
         searches += 1
 
         if middle_name == target:
@@ -77,5 +77,6 @@ def binary_search():
         elif middle_name > target:
             right = midpoint - 1
 
-
+binary_search(names_1000000, target)
+binary_search(["a", "h", "k", "m", "p", "z"], "p")
 print("Program finished.")
