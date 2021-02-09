@@ -21,14 +21,15 @@ names_1000000.sort()
 target = input("Enter name: ")
 
 # linear search algorithm
-amount_of = len(names_1000000)
-range_of_names = range(amount_of)
-for i in range_of_names:
-    if names_1000000[i] == target:
-        print("Yay found at position " + str(i) + "!")
-        break
-    # else:
-    #     print("Not at position " + str(i) + ".")
+def linear_search():
+    amount_of = len(names_1000000)
+    range_of_names = range(amount_of)
+    for i in range_of_names:
+        if names_1000000[i] == target:
+            print("Yay found at position " + str(i) + "!")
+            break
+        # else:
+        #     print("Not at position " + str(i) + ".")
 
 
 names = [
