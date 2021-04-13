@@ -42,8 +42,13 @@ def display_puzzle(puzzle):
     for i in range(len(puzzle)):
         row = puzzle[i]
         for j in range(len(row)):
-            n = row[j]
-            print(n)
+            number = row[j]
+            if number > 0:
+                print(number, end=" ")
+            else:
+                print(" ", end=" ")
+
+        print()
 
 
 
