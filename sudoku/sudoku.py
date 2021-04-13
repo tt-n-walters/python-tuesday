@@ -1,3 +1,6 @@
+import os
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
+
 
 def read_puzzle_file(filename):
     """
@@ -35,8 +38,17 @@ def process_puzzle_string(puzzle_string):
 
 
 
+def display_puzzle(puzzle):
+    for i in range(len(puzzle)):
+        row = puzzle[i]
+        for j in range(len(row)):
+            n = row[j]
+            print(n)
+
+
 
 
 puzzle_strings = read_puzzle_file("puzzles.dat")
 
-print(process_puzzle_string(puzzle_strings[0]))
+first_puzzle = process_puzzle_string(puzzle_strings[0])
+display_puzzle(first_puzzle)
