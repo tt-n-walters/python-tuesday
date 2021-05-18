@@ -11,11 +11,18 @@ class Category:
         else:
             data = json.loads(response.text)
             categories = data["trivia_categories"]
-            
+            self.names = []
+            self.ids = []
+
             for i in range(len(categories)):
                 category = categories[i]
                 category_name = category["name"]
-                print(category_name)
+                category_id = category["id"]
+                self.names.append(category_name)
+                self.ids.append(category_id)
 
+            print(self.names)
+            print(self.ids)
+    
 
 Category()
