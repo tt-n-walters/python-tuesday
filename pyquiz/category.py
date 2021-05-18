@@ -25,4 +25,14 @@ class Category:
             print(self.ids)
     
 
+    def display_categories(self):
+        """
+        Prints all category names with an accompanying label
+            '
+            1)  General Knowledge
+            2)  ...
+            '
+        """
+        pass
+
 Category()
