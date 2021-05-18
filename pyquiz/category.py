@@ -44,8 +44,25 @@ class Category:
         Checks for valid selection.
         Returns the id of the chosen category.
         """
-        pass
+        print("Enter desired category number:")
+        category_number = input(">> ")
+        if category_number.isdigit():
+            category_number = int(category_number)
+            if category_number > 0 and category_number < len(self.names):
+                # Calculate the id by offsetting the number entered
+                category_id = category_number + 8
+                return category_id
+            
+            else:
+                print("Number must be between 1 and 24.")
+                exit()
+        else:
+            print("Invalid input.")
+            exit()
 
 
-test_category = Category()
-test_category.display_categories()
+if __name__ == "__main__":
+    print("Running category test.")
+    test_category = Category()
+    test_category.display_categories()
+    print(test_category.get_user_choice())
