@@ -35,4 +35,14 @@ class Category:
         """
         pass
 
+    
+    def get_user_choice(self):
+        """
+        Allows user input of the desired category.
+        Checks for valid selection.
+        Returns the id of the chosen category.
+        """
+        pass
+
+
 Category()
