@@ -21,8 +21,6 @@ class Category:
                 self.names.append(category_name)
                 self.ids.append(category_id)
 
-            print(self.names)
-            print(self.ids)
     
 
     def display_categories(self):
@@ -45,4 +43,5 @@ class Category:
         pass
 
 
-Category()
+test_category = Category()
+test_category.display_categories()
