@@ -31,7 +31,11 @@ class Category:
             2)  ...
             '
         """
-        pass
+        for i in range(len(self.names)):
+            label = i + 1
+            name = self.names[i]
+            formatted = "{})  {}".format(label, name)
+            print(formatted)
 
     
     def get_user_choice(self):
