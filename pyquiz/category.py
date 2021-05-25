@@ -46,7 +46,9 @@ class Category:
         """
         print("Enter desired category:")
         category_label = input(">> ")
-        if category_label.isalpha():
+        if category_label == "any":
+            return category_label
+        elif category_label.isalpha():
             category_number = ord(category_label)
             if category_number > 64 and category_number < (65 + len(self.names)):
                 # Calculate the id by offsetting the number entered
