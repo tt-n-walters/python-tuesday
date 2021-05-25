@@ -64,38 +64,23 @@ class URL:
         """
         Uses all the user chosen URL options and generates the final API URL.
         """
-        if self.category == "any" and self.difficulty == "any" and self.type == "any":
-            generated_url = "{}amount={}".format(URL.host, self.number_of)
+        arguments = []
+        arguments.append("amount={}".format(self.number_of))
 
-        elif self.category == "any" and self.difficulty == "any" and not self.type == "any":
-            generated_url = "{}amount={}&type={}".format(
-                URL.host, self.number_of, self.type)
+        if not self.category == "any":
+            category_arg = "category={}".format(self.category)
+            arguments.append(category_arg)
 
-        elif self.category == "any" and not self.difficulty == "any" and self.type == "any":
-            generated_url = "{}amount={}&difficulty={}".format(
-                URL.host, self.number_of, self.difficulty)
-
-        elif not self.category == "any" and self.difficulty == "any" and self.type == "any":
-            generated_url = "{}amount={}&category={}".format(
-                URL.host, self.number_of, self.category)
-
-        elif self.category == "any" and not self.difficulty == "any" and not self.type == "any":
-            generated_url = "{}amount={}&difficulty={}&type={}".format(
-                URL.host, self.number_of, self.difficulty, self.type)
-
-        elif not self.category == "any" and not self.difficulty == "any" and self.type == "any":
-            generated_url = "{}amount={}&category={}&difficulty={}".format(
-                URL.host, self.number_of, self.category, self.difficulty)
-
-        elif not self.category == "any" and self.difficulty == "any" and not self.type == "any":
-            generated_url = "{}amount={}&category={}&type={}".format(
-                URL.host, self.number_of, self.category, self.type)
-
-        elif not self.category == "any" and not self.difficulty == "any" and not self.type == "any":
-            generated_url = "{}amount={}&category={}&difficulty={}&type={}".format(
-                URL.host, self.number_of, self.category, self.difficulty, self.type)
-
-        return generated_url
+        if not self.difficulty == "any":
+            difficulty_arg = "difficulty={}".format(self.difficulty)
+            arguments.append(difficulty_arg)
+            
+        if not self.type == "any":
+            type_arg = "type={}".format(self.type)
+            arguments.append(type_arg)
+        
+        argument_string = "&".join(arguments)
+        return URL.host + argument_string
 
 
 if __name__ == "__main__":
