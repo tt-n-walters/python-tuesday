@@ -32,7 +32,7 @@ class Category:
             '
         """
         for i in range(len(self.names)):
-            label = i + 1
+            label = chr(65 + i)
             name = self.names[i]
             formatted = "{})  {}".format(label, name)
             print(formatted)
@@ -44,17 +44,17 @@ class Category:
         Checks for valid selection.
         Returns the id of the chosen category.
         """
-        print("Enter desired category number:")
-        category_number = input(">> ")
-        if category_number.isdigit():
-            category_number = int(category_number)
-            if category_number > 0 and category_number < len(self.names):
+        print("Enter desired category:")
+        category_label = input(">> ")
+        if category_label.isalpha():
+            category_number = ord(category_label)
+            if category_number > 64 and category_number < (65 + len(self.names)):
                 # Calculate the id by offsetting the number entered
-                category_id = category_number + 8
+                category_id = category_number - 56
                 return category_id
             
             else:
-                print("Number must be between 1 and 24.")
+                print("Must be between A and " + chr(65 + len(self.names)) + ".")
                 exit()
         else:
             print("Invalid input.")
